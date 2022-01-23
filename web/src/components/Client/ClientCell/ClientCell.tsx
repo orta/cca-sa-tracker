@@ -35,5 +35,5 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   clientToLookAt,
 }: CellSuccessProps<FindClientById>) => {
-  return <Client client={clientToLookAt} />
+  return <Client clientToLookAt={clientToLookAt} />
 }

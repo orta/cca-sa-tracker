@@ -20,11 +20,11 @@ model Client {
 
   numberOfGuardians Int @default(2)
 
-  hasAHallway         Boolean @default(true)
-  hasAnElevator       Boolean @default(false)
-  hasAnOuterDoor      Boolean @default(true)
-  hasACar             Boolean @default(false)
-  includeAdvancedPDQs Boolean @default(false)
+  hasAnElevator  Boolean @default(false)
+  hasStairs      Boolean @default(false)
+  hasAnOuterDoor Boolean @default(true)
+  hasACar        Boolean @default(false)
+  hasAGarageDoor Boolean @default(false)
 
   exitDoorName String @default("front")
 

@@ -1,0 +1,34 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+model Client {
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  id          Int    @id @default(autoincrement())
+  name        String
+  trainerName String
+
+  livesIn String @default("Apartment")
+
+  numberOfGuardians Int @default(2)
+
+  hasAHallway         Boolean @default(true)
+  hasAnElevator       Boolean @default(false)
+  hasAnOuterDoor      Boolean @default(true)
+  hasACar             Boolean @default(false)
+  includeAdvancedPDQs Boolean @default(false)
+
+  exitDoorName String @default("front")
+
+  preferredTimeOfDay String @default("noon")
+
+  pdqsJSON String @default("['keys', 'bag', 'shoes', 'coat']")
+}
